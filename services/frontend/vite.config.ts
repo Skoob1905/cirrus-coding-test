@@ -18,4 +18,7 @@ export default defineConfig({
       types: resolve(root, "types"),
     },
   },
+  build: {
+    outDir: "dist",
+  },
 });
