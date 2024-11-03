@@ -131,3 +131,4 @@ dist
 
 # only viewable locally.
 services/backend/src/db/ 
+docs
