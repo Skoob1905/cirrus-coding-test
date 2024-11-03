@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { ProfileCardProps } from "./Profile.types";
+import { SubValue, Value } from "views/Meter";
 
 /**
  * Render the Profile Card
@@ -22,7 +23,7 @@ export function Profile({
     <ProfileCard>
       <Avatar src={avatar} alt="Profile" className="profile-image" />
       <div>
-        <Title>{fullName}</Title>
+        <Header>{fullName}</Header>
         <Value>{address}</Value>
         <SubValue>{events} events</SubValue>
         {hasSmartMeter ? (
@@ -33,18 +34,8 @@ export function Profile({
   );
 }
 
-const Value = styled.p`
-  margin: 0;
-  color: lightgray;
-`;
-
-const Title = styled.h3`
-  margin: 0;
-`;
-
-const SubValue = styled.p`
-  font-size: 0.95rem;
-  color: lightgray;
+const Header = styled.h3`
+  margin: 0.5rem 0;
 `;
 
 const Avatar = styled.img`
@@ -54,7 +45,7 @@ const Avatar = styled.img`
   margin-right: 20px;
 `;
 
-const Button = styled.button`
+export const Button = styled.button`
   background-color: #218838;
   color: #fff;
   border: none;
