@@ -1,11 +1,16 @@
 services:
-  # frontend:
-  # build: frontend/.
-  # ports:
-  #   - "3000:3000"
+  frontend:
+    build: services/frontend/.
+    container_name: cirrus-frontend
+    environment:
+      - VITE_APP_METER_BASE_API_URL=http://host.docker.internal:8000
+    restart: always
+    ports:
+      - "3000:3000"
 
   backend:
     build: services/backend/.
+    container_name: cirrus-backend
     restart: always
     environment:
       - REDIS_URL=redis://host.docker.internal:6379
