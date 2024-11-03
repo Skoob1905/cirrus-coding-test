@@ -1,0 +1,29 @@
+services:
+  # frontend:
+  # build: frontend/.
+  # ports:
+  #   - "3000:3000"
+
+  backend:
+    build: services/backend/.
+    restart: always
+    environment:
+      - REDIS_URL=redis://host.docker.internal:6379
+      - BASE_API_URL=http://localhost:8000
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+    networks:
+      - cirrus
+
+  redis:
+    image: redis
+    restart: always
+    ports:
+      - "6379:6379"
+    networks:
+      - cirrus
+
+networks:
+  cirrus:
