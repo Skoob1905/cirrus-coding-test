@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import type { ProcessedCustomerData } from "../../../backend/src/types";
+import type { ProcessedCustomerData } from "./useFetchMeterData.types";
 
 export function useFetchMeterData(guid: string | undefined) {
   const [data, setData] = useState<ProcessedCustomerData>();

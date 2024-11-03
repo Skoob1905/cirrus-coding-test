@@ -17,3 +17,29 @@ export type meterData = {
    */
   hasSmartMeter: boolean;
 };
+
+export type ProcessedCustomerData = {
+  fullName: string;
+  address: string;
+  commsHub: {
+    events: number;
+    deviceTime: string;
+    signal: number;
+    ipv6: string;
+    imei: string;
+    icc: string;
+    msisdn: string;
+    manufacturer: {
+      name: string;
+      model: string;
+      logoBase64: string;
+    };
+    supplier: {
+      name: string;
+      logoBase64: string;
+    };
+  };
+  guid: string;
+  avatar: string;
+  hasSmartMeter: boolean;
+};
