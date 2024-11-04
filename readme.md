@@ -1,54 +1,60 @@
+## Solution
 
-## Welcome to the Virgin Media O2 Coding Challenge 🎉
+This repo contains all of the code which is used to create some customers dashboard which shows some information about their smart meter.
 
-Thank you for your interest in joining us, check out the instructions below for our coding test!
-We’re excited to see how you approach this challenge and can’t wait to dive into the awesome work you’ll deliver.
+### Prequisites
 
-Here’s the deal: we’re asking you to build a simple frontend and backend that’ll display specific data at a dedicated URL. This is your chance to show off your skills with CSS-in-JS, TypeScript, and Express—so get comfortable and let your code do the talking.
+I have taken the time to run all of this using Docker. Please make sure you have the latest and greatest version of docker installed as this comes with `docker-compose`, which we will be using to run the app.
 
-### The Challenge
+I will be also providing small execution snippets based on linux/zsh, so please use equivalent commands for other operating systems, if you are on those.
 
-1. **Frontend Requirements**:
-   - Set up a frontend route using React Router to display a "meter" record. When you visit `http://localhost:port/meter/{id}`, it should display data that corresponds to that ID.
-   - **Design**: We’ve included a [wireframe, here](https://www.figma.com/design/ty5UkYwB6iWDsFLZzx6V8i/Frontend-Coding-Test?node-id=0-1&t=VKKWwlXSbe00mvp3-1) as a guide. Don’t worry too much about matching the precise spacing and sizes—just aim for the general visual feel. We’re more interested in seeing how you approach the layout and styling!
-   - **CSS-in-JS**: You **must** use a CSS-in-JS library like `styled-components` or `@emotion` for all styling. Virgin Media O2 loves style, and we’re looking for a solution that makes the UI shine.
-   - **Other Functional Requirements**: 
-     - Only display the smart meter green pill\
-      ![smart-meter](smart-meter-screenshot.png)\
-      when the user has a smart meter. 
-     - For the device time, just utilise the HH:MM:SS of the timestamp for the record.
+#### Running the app
 
-2. **Backend Requirements**:
-   - Set up an Express endpoint to serve the data for the given ID.
-   - The endpoint should be able to accept a meter ID and return the corresponding data to the frontend.
-   - Use **TypeScript** for all backend logic—we’re big fans of strongly typed code here.
-   - Use the data for this found in `services/backend/src/data.json`
+Please clone this code using
 
-3. **Tech Stack**:
-   - **Frontend**: React with TypeScript, React Router, and a CSS-in-JS library of your choice - styled-components or @emotion (p.s. use more modern css e.g. `Flexbox`).
-   - **Backend**: Express, TypeScript.
-   - Feel free to use any other libraries or tools you think would be beneficial for this task on both the front and backend. We trust your judgement!
+```
+git clone git@github.com:Skoob1905/cirrus-coding-test.git
+```
 
-### What We’re Looking For
+if you are using SSH or
 
-- **Clean, readable code** that’s easy to follow and maintain.
-- **Attention to detail** with UI. Your work doesn’t need to be flashy, but it should be polished and professional.
-- **Best practices** for organizing and structuring code, both frontend and backend.
+```
+https://github.com/Skoob1905/cirrus-coding-test.git
+```
 
-### The Little Extras
+if you prefer to use HTTPS.
 
-- If you've added anything we'll need on our machines to run your project, instructions on how to add/run it would be awesome.
-- If you have any queries before you get stuck in, feel free to email me at jordan.paisley@virginmediao2.co.uk
+I have forked the original cirrus repo so the structure has remained largely the same, barring a few folder structure within the belly of each of the backend/frontend services.
 
-### Getting Started
+After cloning, in your terminal then execute
 
-1. Fork or clone this repository.
-2. Set up your Express server (we've included an Express dev server starter, which you can run inside `services/backend` with `npm start`) and frontend(feel free to use any build tools to get yourself started).
-3. Make sure everything works smoothly.
+```
+cd cirrus-coding-test
+docker-compose up
+```
 
-When you're ready, zip up your project or link us to your repo. 
+**Note: Please stop currently all services runnning on ports 3000 and 8000 as docker will make an attempt, to run the services on these ports**
 
-Thanks again for taking part, and remember — this is your chance to show us your coding magic. 
-Have fun, and may the best code win!
+This will then begin to build the frontend, backend services and will pull the redis service that will be used to run this app.
 
-Happy coding! 🚀
+When docker has finished running, go to the app here[here](http://localhost:3000/meter/d0834a3e-3a8c-41c6-aea4-4bad2156ec6c), as this will take you a page showing some customer data.
+
+### Documentation
+
+Alongside these services I have also created and apiDoc to show how the API can be used.
+
+I have tried to visualise this dashboard as an epic inside of a larger story. Best practices when working as a team on these epics, have told me in the past to make extensive use of comments, jsDoc and apiDoc.
+
+Alongside the comments in the code, I have also built and apiDoc and served this as a static asset via the **"/"** endpoint on the backend.
+
+Please follow this link [here](http://localhost:8000) to find this documentation and how to use the API
+
+### Optimisation
+
+This app also contains some basic code which is used to interact with a redis container.
+
+There are multiple ways to optimise code for performance, I have tried to implement some here like caching for example. You will notice inside of the `routes/meter.ts` file, I have created a deliberate delay to simulate what a DB request could look like so that we can view the time difference inside of the console, to see that this works.
+
+### DB
+
+I placed the db.json inside of a db directory which was gitignored meaning this app wouldn't work! This json document has been stored in `db/data.json` and I have removed the line of code to gitignore this, for the purposes of this interview only. so just can actually render some data.
