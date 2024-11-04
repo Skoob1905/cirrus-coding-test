@@ -149,6 +149,6 @@ export const Metadata = styled.div`
   background-color: black;
   text-align: center;
   border-radius: 10px;
-  padding: 10px 20px;
+  padding: 10px;
   flex-grow: 1;
 `;
