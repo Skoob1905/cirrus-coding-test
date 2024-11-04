@@ -41,7 +41,7 @@ Unfortunately, After everything working successfully and me performing these ste
 
 Due to last minute issues, The frontend will have to be ran locally to connect to the Backend/DB instance that's being ran in docker. Run the following commands to do this successfully.
 
-First you need to create a .env file inside of the `services/frontend` directory and place this key=value pair inside, which will allow connection to backend service.
+First you need to create a `.env` file inside of the `services/frontend` directory and place this key=value pair inside, which will allow connection to backend service.
 
 ```
 VITE_APP_METER_BASE_API_URL=http://localhost:8000
@@ -51,10 +51,11 @@ Then run these commands
 
 ```
 cd services/frontend
-
+npm i
+npm run dev
 ```
 
-When this is running, go to the app here[here](http://localhost:5173/meter/d0834a3e-3a8c-41c6-aea4-4bad2156ec6c), as this will take you a page showing some customer data.
+When this is running, go to the app [here](http://localhost:5173/meter/d0834a3e-3a8c-41c6-aea4-4bad2156ec6c), as this will take you a page showing some customer data.
 
 ### Documentation
 
