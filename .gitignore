@@ -129,6 +129,4 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-# only viewable locally.
-services/backend/src/db/ 
 docs
