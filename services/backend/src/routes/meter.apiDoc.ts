@@ -1,5 +1,5 @@
 /**
- * @api {get} /meters/:id Get Meter Data for a specific customer
+ * @api {get} /meter/:id Get Meter Data for a specific customer
  * @apiName GetMeterData
  * @apiGroup Meter
  * @apiParam {String} id Customer ID
