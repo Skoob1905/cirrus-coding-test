@@ -2,7 +2,7 @@
 
 This repo contains all of the code which is used to create some customers dashboard which shows some information about their smart meter.
 
-### Prequisites
+### Prerequisites
 
 I have taken the time to run all of this using Docker. Please make sure you have the latest and greatest version of docker installed as this comes with `docker-compose`, which we will be using to run the app.
 
@@ -30,7 +30,7 @@ After cloning, in your terminal then execute
 
 ```
 cd cirrus-coding-test
-docker-compose up
+docker-compose up -d
 ```
 
 **Note: Please stop currently all services runnning on ports 3000 and 8000 as docker will make an attempt, to run the services on these ports**
@@ -50,8 +50,8 @@ VITE_APP_METER_BASE_API_URL=http://localhost:8000
 Then run these commands
 
 ```
-npm i
-npm run dev
+cd services/frontend
+
 ```
 
 When this is running, go to the app here[here](http://localhost:5173/meter/d0834a3e-3a8c-41c6-aea4-4bad2156ec6c), as this will take you a page showing some customer data.
