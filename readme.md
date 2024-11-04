@@ -35,9 +35,26 @@ docker-compose up
 
 **Note: Please stop currently all services runnning on ports 3000 and 8000 as docker will make an attempt, to run the services on these ports**
 
-This will then begin to build the frontend, backend services and will pull the redis service that will be used to run this app.
+This will then begin to build the backend services and will pull the redis service that will be used to run this app.
 
-When docker has finished running, go to the app here[here](http://localhost:3000/meter/d0834a3e-3a8c-41c6-aea4-4bad2156ec6c), as this will take you a page showing some customer data.
+Unfortunately, After everything working successfully and me performing these steps as a sanity I found a bug with running the frontend in production.
+
+Due to last minute issues, The frontend will have to be ran locally to connect to the Backend/DB instance that's being ran in docker. Run the following commands to do this successfully.
+
+First you need to create a .env file inside of the `services/frontend` directory and place this key=value pair inside, which will allow connection to backend service.
+
+```
+VITE_APP_METER_BASE_API_URL=http://localhost:8000
+```
+
+Then run these commands
+
+```
+npm i
+npm run dev
+```
+
+When this is running, go to the app here[here](http://localhost:5173/meter/d0834a3e-3a8c-41c6-aea4-4bad2156ec6c), as this will take you a page showing some customer data.
 
 ### Documentation
 

@@ -10,7 +10,7 @@ COPY src ./src
 
 # Build apidoc
 COPY apidoc.json .
-RUN npx apidoc -i . -o docs
+RUN npx apidoc -i . -o src/docs
 
 # Default command
 CMD ["npm", "start"]
