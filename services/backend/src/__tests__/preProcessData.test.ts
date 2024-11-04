@@ -11,7 +11,6 @@ describe("PreProcessData", () => {
       commsHub: {
         ...customerData.commsHub,
         events: customerData.commsHub.events.length,
-        deviceTime: new Date(customerData.commsHub.deviceTime).toISOString(),
       },
       avatar: customerData.avatar,
       hasSmartMeter: customerData.hasSmartMeter,
