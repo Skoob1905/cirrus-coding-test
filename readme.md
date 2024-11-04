@@ -4,7 +4,7 @@ This repo contains all of the code which is used to create some customers dashbo
 
 ### Prerequisites
 
-I have taken the time to run most of this using Docker. Please make sure you have the latest and greatest version of docker installed as this comes with `docker-compose`, which we will be using to run the app.
+I have taken the time to run most of this using Docker. Please make sure you have the latest and greatest version of docker installed as this comes with `docker-compose`, which we will be using to run the app. Also we will be using node so make sure that you have npm and node installed on your machine also.
 
 I will be also providing small execution snippets based on linux/zsh, so please use equivalent commands for other operating systems, if you are using those.
 
