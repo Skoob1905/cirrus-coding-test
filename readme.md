@@ -4,9 +4,9 @@ This repo contains all of the code which is used to create some customers dashbo
 
 ### Prerequisites
 
-I have taken the time to run all of this using Docker. Please make sure you have the latest and greatest version of docker installed as this comes with `docker-compose`, which we will be using to run the app.
+I have taken the time to run most of this using Docker. Please make sure you have the latest and greatest version of docker installed as this comes with `docker-compose`, which we will be using to run the app.
 
-I will be also providing small execution snippets based on linux/zsh, so please use equivalent commands for other operating systems, if you are on those.
+I will be also providing small execution snippets based on linux/zsh, so please use equivalent commands for other operating systems, if you are using those.
 
 #### Running the app
 
@@ -33,7 +33,7 @@ cd cirrus-coding-test
 docker-compose up -d
 ```
 
-**Note: Please stop currently all services runnning on ports 3000 and 8000 as docker will make an attempt, to run the services on these ports**
+**Note: Please stop currently all services runnning on 8000 as docker will make an attempt, to run the services on these ports**
 
 This will then begin to build the backend services and will pull the redis service that will be used to run this app.
 
@@ -74,4 +74,4 @@ There are multiple ways to optimise code for performance, I have tried to implem
 
 ### DB
 
-I placed the db.json inside of a db directory which was gitignored meaning this app wouldn't work! This json document has been stored in `db/data.json` and I have removed the line of code to gitignore this, for the purposes of this interview only. so just can actually render some data.
+I placed the db.json inside of a db directory which was gitignored meaning this app wouldn't work! This json document has been stored in `db/data.json` and I have removed the line of code to gitignore this, for the purposes of this interview only. Only so that we can render some data to the page.
