@@ -2,6 +2,12 @@ import styled from "styled-components";
 import { Metadata, Subtitle, Title, Value } from "views/Meter";
 import { SignalProps } from "./Signal.types";
 
+/**
+ * Render the Signal component with the value of the signal and the icon
+ * @param SignalProps Props to render the Signal Component
+ * @param SignalProps.value The value of the signal
+ * @returns The Signal Component widget
+ */
 export function Signal({ value }: SignalProps) {
   return (
     <Metadata>
@@ -19,6 +25,7 @@ export function Signal({ value }: SignalProps) {
   );
 }
 
+// Wrapper for the icon
 const IconWrapper = styled.div`
   display: flex;
   justify-content: space-between;
@@ -28,6 +35,7 @@ const IconWrapper = styled.div`
   height: 60px;
 `;
 
+// Define each bar in the signal icon
 const Bar = styled.div`
   width: 6px;
   border-radius: 3px;
